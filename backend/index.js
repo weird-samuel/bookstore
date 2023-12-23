@@ -12,13 +12,13 @@ app.use(express.json());
 app.use(cors());
 
 // option 2 - Allow specific origins
-app.use(
-  cors({
-    origin: "https://bookstore-frontend-livid.vercel.app/",
-    methods: "GET, POST, PUT, DELETE",
-    allowedHeaders: ["Content-Type"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://bookstore-frontend-livid.vercel.app/",
+//     methods: "GET, POST, PUT, DELETE",
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
 app.get("/", (req, res) => {
   res.status(234).send("You should not be here");
 });
