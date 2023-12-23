@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5555/books")
+      .get("https://bookstore-peach.vercel.app/books")
       .then((res) => {
         // console.log(res.data);
         setBooks(res.data.data);
