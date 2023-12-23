@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Loader from "../components/Loader";
+import { useSnackbar } from "notistack";
 
 const CreateBook = () => {
   const [title, setTitle] = useState("");
@@ -10,6 +11,7 @@ const CreateBook = () => {
   const [publishYear, setPublishYear] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveBook = () => {
     const data = {
@@ -20,15 +22,15 @@ const CreateBook = () => {
     setLoading(true);
     const validateForm = () => {
       if (title.trim() === "") {
-        alert("Please enter a title");
+        enqueueSnackbar("Please enter a title", { variant: "error" });
         return false;
       }
       if (author.trim() === "") {
-        alert("Please enter an author");
+        enqueueSnackbar("Please enter an author", { variant: "error" });
         return false;
       }
       if (publishYear.trim() === "") {
-        alert("Please enter a publish year");
+        enqueueSnackbar("Please enter a publish year", { variant: "error" });
         return false;
       }
       return true;
@@ -41,11 +43,13 @@ const CreateBook = () => {
       .post(`http://localhost:5555/books`, data)
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Book created successfully", { variant: "success" });
         navigate("/");
       })
       .catch((err) => {
         setLoading(false);
-        alert(err.message);
+        // alert(err.message);
+        enqueueSnackbar("Error", { variant: "error" });
         console.log(err);
       });
   };

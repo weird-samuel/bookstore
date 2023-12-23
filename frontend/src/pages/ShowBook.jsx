@@ -3,11 +3,13 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Loader from "../components/Loader";
+import { useSnackbar } from "notistack";
 
 const ShowBook = () => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     setLoading(true);
@@ -15,14 +17,15 @@ const ShowBook = () => {
       .get(`http://localhost:5555/books/${id}`)
       .then((res) => {
         setBook(res.data);
-        console.log(res.data);
+        // enqueueSnackbar("Success", { variant: "success" });
         setLoading(false);
       })
       .catch((err) => {
+        enqueueSnackbar("Error", { variant: "error" });
         console.log(err);
         setLoading(false);
       });
-  }, [id]);
+  }, [id, enqueueSnackbar]);
 
   return (
     <div className="p-4">
