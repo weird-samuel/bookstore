@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     axios
-      .get(`https://bookstore-peach.vercel.app/${id}`)
+      .get(`https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);
@@ -57,7 +57,10 @@ const EditBook = () => {
       return;
     }
     axios
-      .put(`https://bookstore-peach.vercel.app/${id}`, data)
+      .put(
+        `https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/${id}`,
+        data
+      )
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book updated successfully", { variant: "success" });

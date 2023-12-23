@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://bookstore-peach.vercel.app/books")
+      .get("https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/books")
       .then((res) => {
         // console.log(res.data);
         setBooks(res.data.data);

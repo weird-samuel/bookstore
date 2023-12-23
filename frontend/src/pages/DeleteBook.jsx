@@ -15,7 +15,9 @@ const DeleteBook = () => {
     console.log(id); // Add this line
     setLoading(true);
     axios
-      .delete(`https://bookstore-peach.vercel.app/${id}`)
+      .delete(
+        `https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/${id}`
+      )
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book deleted successfully", { variant: "success" });
