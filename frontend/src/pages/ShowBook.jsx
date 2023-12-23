@@ -14,7 +14,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost/5555/${id}`)
+      .get(`https://bookstore-peach.vercel.app/${id}`)
       .then((res) => {
         setBook(res.data);
         // enqueueSnackbar("Success", { variant: "success" });
