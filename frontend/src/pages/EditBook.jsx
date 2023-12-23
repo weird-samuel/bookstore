@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     axios
-      .get(`https://bookstore-backend-7nf44f8rf-weird-samuel.vercel.app/${id}`)
+      .get(`http://localhost/5555/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);
@@ -57,10 +57,7 @@ const EditBook = () => {
       return;
     }
     axios
-      .put(
-        `https://bookstore-backend-7nf44f8rf-weird-samuel.vercel.app/${id}`,
-        data
-      )
+      .put(`http://localhost/5555/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book updated successfully", { variant: "success" });

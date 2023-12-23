@@ -14,7 +14,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://bookstore-backend-7nf44f8rf-weird-samuel.vercel.app/${id}`)
+      .get(`http://localhost/5555/${id}`)
       .then((res) => {
         setBook(res.data);
         // enqueueSnackbar("Success", { variant: "success" });
