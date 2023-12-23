@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get one book by id
-router.get("//:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -50,7 +50,7 @@ router.get("//:id", async (req, res) => {
 });
 
 // Update Route
-router.put("//:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     if (!req.body.title || !req.body.author || !req.body.publishYear) {
       return res.status(400).send({
