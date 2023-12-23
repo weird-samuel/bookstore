@@ -11,7 +11,7 @@ app.use(express.json());
 // Optoin 1 - Allow all origins using cors default options
 app.use(
   cors({
-    origin: "*",
+    origin: "https://bookstore-frontend-livid.vercel.app",
     methods: "GET, POST, PUT, DELETE",
     allowedHeaders: ["Content-Type"],
   })
