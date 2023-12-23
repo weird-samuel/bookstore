@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     axios
-      .get(`https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/${id}`)
+      .get(`https://bookstore-backend-7nf44f8rf-weird-samuel.vercel.app/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);
@@ -58,7 +58,7 @@ const EditBook = () => {
     }
     axios
       .put(
-        `https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/${id}`,
+        `https://bookstore-backend-7nf44f8rf-weird-samuel.vercel.app/${id}`,
         data
       )
       .then(() => {

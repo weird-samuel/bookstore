@@ -16,7 +16,7 @@ const DeleteBook = () => {
     setLoading(true);
     axios
       .delete(
-        `https://bookstore-backend-2vgvqibeu-weird-samuel.vercel.app/${id}`
+        `https://bookstore-backend-7nf44f8rf-weird-samuel.vercel.app/${id}`
       )
       .then(() => {
         setLoading(false);
