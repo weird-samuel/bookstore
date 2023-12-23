@@ -86,7 +86,7 @@ const CreateBook = () => {
             className="border-2 border-gray-500 px-4 py-2 w-full"
           />
           <button
-            className="p-2 bg-sky-800 text-white m-8"
+            className="p-2 bg-sky-800 text-white m-8 w-44"
             onClick={handleSaveBook}
           >
             Add to Books
