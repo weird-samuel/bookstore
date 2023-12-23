@@ -9,13 +9,7 @@ const app = express();
 app.use(express.json());
 // Middleware to handle CORS policy
 // Optoin 1 - Allow all origins using cors default options
-app.use(
-  cors({
-    origin: "https://bookstore-frontend-livid.vercel.app",
-    methods: "GET, POST, PUT, DELETE",
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
 
 // option 2 - Allow specific origins
 // app.use(
