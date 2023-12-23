@@ -9,7 +9,13 @@ const app = express();
 app.use(express.json());
 // Middleware to handle CORS policy
 // Optoin 1 - Allow all origins using cors default options
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET, POST, PUT, DELETE",
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
 // option 2 - Allow specific origins
 // app.use(
