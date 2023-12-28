@@ -12,7 +12,7 @@ const DeleteBook = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleDeleteBook = () => {
-    console.log(id); // Add this line
+    // console.log(id);
     setLoading(true);
     axios
       .delete(`https://bookstore-peach.vercel.app/books/${id}`)
