@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     axios
-      .get(`https://bookstore-peach.vercel.app/${id}`)
+      .get(`https://bookstore-peach.vercel.app/books${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);

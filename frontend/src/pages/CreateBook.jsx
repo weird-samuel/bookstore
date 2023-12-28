@@ -40,7 +40,7 @@ const CreateBook = () => {
       return;
     }
     axios
-      .post(`https://bookstore-peach.vercel.app`, data)
+      .post(`https://bookstore-peach.vercel.app/books`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book created successfully", { variant: "success" });
